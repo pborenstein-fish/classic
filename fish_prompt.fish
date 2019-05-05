@@ -27,7 +27,10 @@ function fish_prompt
   end
 
   printf "\n"
-  iterm2_prompt_mark    # OMG yay!
+  
+  # Put the iterm2 dingus after the empty line if we're running iterm
+  type -q iterm2_prompt_mark && iterm2_prompt_mark  
+
   set_color $fish_color_user
   printf "%s@%s: " $USER $__fish_prompt_hostname
 
